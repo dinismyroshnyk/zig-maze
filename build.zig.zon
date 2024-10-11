@@ -1,0 +1,17 @@
+.{
+    .name = "zig-maze",
+    .version = "0.0.1",
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "src",
+    },
+    .dependencies = .{
+        .raylib = .{
+            //.url = "https://github.com/raysan5/raylib/archive/f5328a9bb63a0e0eca7dead15cfa01a3ec1417c2.tar.gz",
+            //.hash = "1220845fead3e8e7fbbb1058fed7608088e45b3090d9eb10b653d5374e5021c64bbc",
+            .url = "https://github.com/raysan5/raylib/archive/52f2a10db610d0e9f619fd7c521db08a876547d0.tar.gz",
+            .hash = "122078ad3e79fb83b45b04bd30fb63aaf936c6774db60095bc6987d325cbe5743373",
+        },
+    },
+}
