@@ -6,8 +6,7 @@ pub fn main() !void {
     defer game.clean_resorces();
 
     game = Game.init() catch |err| {
-        std.debug.print("Error initializing the game struct!\n", .{});
-        error_printer(err);
+        error_printer(err, "Error initializing the game struct!");
         return err;
     };
 
@@ -16,7 +15,8 @@ pub fn main() !void {
     }
 }
 
-fn error_printer(err: anyerror) void {
+fn error_printer(err: anyerror, message: []const u8 ) void {
+    std.debug.print("{s}\n", .{message});
     std.debug.print("Error type: {s}\n", .{@errorName(err)});
     std.debug.print("Error message: {any}\n", .{err});
 }
