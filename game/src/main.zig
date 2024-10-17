@@ -5,15 +5,18 @@ pub fn main() anyerror!void {
     raylib.InitWindow(1280, 720, "Red Cube");
     defer raylib.CloseWindow();
 
-    // Disable mouse cursor
-    raylib.DisableCursor();
-
     // Set up fullscreen mode
     const monitor = raylib.GetCurrentMonitor();
     const monitor_width = raylib.GetMonitorWidth(monitor);
     const monitor_height = raylib.GetMonitorHeight(monitor);
     raylib.SetWindowSize(monitor_width, monitor_height);
     raylib.SetWindowState(raylib.FLAG_FULLSCREEN_MODE);
+
+    // Center cursor
+    raylib.SetMousePosition(@divTrunc(monitor_width, 2), @divTrunc(monitor_height, 2));
+
+    // Disable mouse cursor
+    raylib.DisableCursor();
 
     // Set up cube
     const cube_pos = vec_3(0.0, 0.6, 0.0);
